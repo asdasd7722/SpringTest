@@ -15,10 +15,29 @@ public class HelloController {
         return "hello-mvc";
     }
 
-    @GetMapping("thisisapi")
+    @GetMapping("hello-string")
     @ResponseBody
-    public String thisisapi(@RequestParam("name") String name) {
+    public String hello_string(@RequestParam("name") String name) {
         return "Hello " + name;
     }
 
+    @GetMapping("hello-api")
+    @ResponseBody
+    public String hello_api(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
+        return "Hello " + name;
+    }
+
+    static class Hello{
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }
