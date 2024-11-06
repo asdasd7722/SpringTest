@@ -1,0 +1,57 @@
+/* styles.css */
+
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* 갤러리 항목 간의 간격 */
+}
+
+.gallery-item {
+    flex: 1 1 200px; /* 기본 너비를 200px로 설정하고, 공간이 있으면 늘려줌 */
+    max-width: 300px; /* 최대 너비를 300px로 제한 */
+    overflow: hidden; /* 이미지가 갤러리 항목을 넘지 않도록 함 */
+    border-radius: 8px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+.gallery-item img {
+    width: 100%; /* 이미지가 갤러리 항목의 너비에 맞게 조정됨 */
+    height: auto; /* 비율을 유지하면서 높이를 자동으로 조정 */
+    display: block; /* 이미지 아래의 여백 제거 */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column; /* 화면이 좁아지면 세로 정렬로 변경 */
+    }
+}
